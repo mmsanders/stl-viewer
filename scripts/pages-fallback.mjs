@@ -19,5 +19,6 @@ const html = readFileSync(file, "utf8")
   .replaceAll('href="/__grok/icon-180.png"', 'href="/stl-viewer/__grok/icon-180.png"');
 
 writeFileSync(file, html);
+writeFileSync(join(dirname(file), ".nojekyll"), "");
 copyFileSync(file, join(dirname(file), "404.html"));
 console.log(`pages: ${file}`);
